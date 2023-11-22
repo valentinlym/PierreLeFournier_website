@@ -25,6 +25,9 @@ class Devis
     #[ORM\Column(length: 500)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 180)]
+    private ?string $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Devis
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
 
         return $this;
     }
