@@ -19,7 +19,7 @@ class UtilisateurCrudController extends AbstractCrudController
     {
         return [
             TextField::new('email'),
-            TextField::new('password'),
+            TextField::new('password', "Mot de passe"),
         ];
     }
 }
