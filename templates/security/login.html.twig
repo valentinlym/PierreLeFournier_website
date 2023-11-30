@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base--light.html.twig' %}
 {% block html_class %}class="login"
 {% endblock %}
 {% block title %}Connexion au back office
@@ -27,7 +27,7 @@
 					<p>
 						Vous êtes connecté en tant que
 						{{ app.user.userIdentifier }}<br>
-						<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						<a href="{{ path('app_logout') }}" class="login__left" >Se déconnecter</a>
 					</p>
 				{% endif %}
 				{% if error %}

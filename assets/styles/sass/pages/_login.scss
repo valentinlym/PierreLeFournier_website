@@ -30,8 +30,17 @@
             }
 
         }
+
         &__alert {
             color: var(--e900);
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                font-weight: 500;
+            }
         }
     }
 
@@ -44,15 +53,6 @@
 
     &__right {
         display: none;
-    }
-
-}
-
-a {
-    text-decoration: underline;
-
-    &:hover {
-        font-weight: 500;
     }
 }
 
@@ -76,6 +76,7 @@ a {
             &__img {
                 display: none;
             }
+
             .btn::after {
                 right: 8rem;
             }
