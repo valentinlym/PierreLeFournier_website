@@ -12,3 +12,4 @@ import './styles/app.scss';
 import './bootstrap';
 import './js/form';
 import './js/header';
+import './js/map';
