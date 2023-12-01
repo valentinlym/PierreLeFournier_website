@@ -20,6 +20,7 @@
         background: var(--t500);
         display: flex;
         padding: 4px 2px 0 2px;
+
         p {
             line-height: auto;
         }
@@ -31,8 +32,35 @@
 
     &__btn {
         padding-left: 0;
+
         &:hover {
             padding-left: 0;
         }
+    }
+}
+
+.offres {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 80px 0;
+
+    &__content {
+        
+        & h2 {
+            margin-bottom: 32px;
+        }
+    }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .offres__cards {
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 }
