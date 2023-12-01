@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OffreDeStage index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Le goût d'une équipe passionnée.</h2>
+        <p>Pierre LeFournier n'est pas seul dans sa quête de perfection en boulangerie et pâtisserie. Il s'appuie sur une équipe de boulangers et pâtissiers hautement compétente et soudée. Si vous êtes stagiaire en quête d'excellence et de camaraderie, "Douce Saveur" est l'endroit idéal pour aiguiser vos compétences. Rejoignez-nous !</p>
+
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Salaire</th>
+                <th>Duree</th>
+                <th>Description</th>
+                <th>Brouillon</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre_de_stage in offre_de_stages %}
+            <tr>
+                <td>{{ offre_de_stage.id }}</td>
+                <td>{{ offre_de_stage.titre }}</td>
+                <td>{{ offre_de_stage.salaire }}</td>
+                <td>{{ offre_de_stage.duree }}</td>
+                <td>{{ offre_de_stage.description }}</td>
+                <td>{{ offre_de_stage.brouillon ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_offre_de_stage_show', {'id': offre_de_stage.id}) }}">show</a>
+                    <a href="{{ path('app_offre_de_stage_edit', {'id': offre_de_stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+    <h3>Nos offres de stages</h3>
+    {% for offre_de_stage in offre_de_stages %}
+    <div class="card">
+                    <p class="card__title">
+                    {{ offre_de_stage.titre }}
+                    </p>
+                    <div class="card__tags">
+                        <div class="card__tag">
+                            <p>{{ offre_de_stage.salaire }}</p>
+                        </div>
+                        <div class="card__tag">
+                            <p>{{ offre_de_stage.duree }}</p>
+                        </div>
+                        <div class="card__description">
+                            <p>{{ offre_de_stage.description }}</p>
+                        </div>
+                        <div class="card__tag">
+                            <p>{{ offre_de_stage.brouillon ? 'Yes' : 'No' }}</p>
+                        </div>
+                    </div>
+                    <button class="btn btn__secondaire card__btn">Candidater</button>
+                </div>
+            </div>
+    {% endfor %}
+{% endblock %}
