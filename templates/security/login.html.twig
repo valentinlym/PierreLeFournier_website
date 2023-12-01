@@ -1,31 +1,46 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
+{% extends 'base--light.html.twig' %}
+{% block html_class %}class="login"
+{% endblock %}
+{% block title %}Connexion au back office
+{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+	<h1 style="display: none;">Connexion au back office</h1>
+	<div class="login__content">
+		<div class="login__left">
+			<form id="sumitForm" method="post">
+				<div class="login__left__img">
+					<img src="{{ asset('build/images/svg/Logo_Pierre_LeFournier.svg') }}" width="201" alt="logo de Pierre LeFournier"></div>
+				<h2>Connexion au back office</h2>
+				<div class="login__champs">
+					<div class="champ">
+						<label for="Identifiant">Identifiant</label>
+						<input class="champ__input" value="" id="identifiant" type="email" name="email" placeholder="Identifiant" required>
+					</div>
+					<div class="champ">
+						<label for="inputPassword">Mot de passe</label>
+						<input class="champ__input" id="password" type="password" name="password" placeholder="Mot de passe" required>
+					</div>
+				</div>
+				{% if app.user %}
+					<p>
+						Vous êtes connecté en tant que
+						{{ app.user.userIdentifier }}<br>
+						<a href="{{ path('app_logout') }}" class="login__left" >Se déconnecter</a>
+					</p>
+				{% endif %}
+				{% if error %}
+					<p class="login__left__alert">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+				{% endif %}
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<button disabled id="btnSoumettre" class="btn" type="submit">
+					Se connecter
+				</button>
+			</form>
+		</div>
+		<div class="login__right">
+			<img src="{{ asset('build/images/svg/Logo_Pierre_LeFournier--white.svg') }}" width="201" alt="logo de Pierre LeFournier">
+		</div>
+	</div>
 {% endblock %}

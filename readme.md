@@ -11,4 +11,5 @@ Modifier la ligne 22 du ficher `.env` avec l'identifiant et le mot de passe de v
 composer install
 symfony console doctrine:database:create
 symfony console doctrine:migration:migrate
+yarn install
 ```

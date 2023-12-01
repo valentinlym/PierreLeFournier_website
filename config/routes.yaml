@@ -1,3 +1,6 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+static:
+    resource: ../src/Controller/
+    type: annotation
