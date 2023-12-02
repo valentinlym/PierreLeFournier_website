@@ -5,22 +5,55 @@
 
 {% block body %}
 	<div class="container">
-		<h2>Un artisan passionné avant tout !</h2>
-		<div class="blocPresentation">
-			<p>La passion pour la boulangerie chez Pierre LeFournier est une affaire qui ne date pas d'hier. Élevé dans une famille où le pétrissage de la pâte et le tour de main pour les croissants étaient des rituels quotidiens, il savait dès son jeune âge que sa vie tournerait autour des fours et des farines. Après avoir obtenu des diplômes en boulangerie et en pâtisserie, Pierre a ouvert "Douce saveur", un établissement qui marie la tradition artisanale française à une créativité sans cesse renouvelée. Ses créations sont un savant mélange d'ingrédients de qualité, d'une technique irréprochable et surtout, d'une passion qui ne s'est jamais estompée. Aujourd'hui, avec l'aide de son équipe dévouée, il continue de ravir les palais et d'enrichir le patrimoine gourmand français, une miche de pain, un éclair ou un macaron à la fois.</p>
-			<div class="artisanImage">
-				<img class="Artisan" src="{{ asset('build/images/img/artisan.png') }}" alt="image de l'artisan"/>
+		<div class="about">
+			<div class="about__text">
+				<h2>Un artisan passionné avant tout !</h2>
+				<p>La passion pour la boulangerie chez Pierre LeFournier est une affaire qui ne date pas d'hier. Élevé dans une famille où le pétrissage de la pâte et le tour de main pour les croissants étaient des rituels quotidiens, il savait dès son jeune âge que sa vie tournerait autour des fours et des farines. Après avoir obtenu des diplômes en boulangerie et en pâtisserie, Pierre a ouvert "Douce saveur", un établissement qui marie la tradition artisanale française à une créativité sans cesse renouvelée. Ses créations sont un savant mélange d'ingrédients de qualité, d'une technique irréprochable et surtout, d'une passion qui ne s'est jamais estompée. Aujourd'hui, avec l'aide de son équipe dévouée, il continue de ravir les palais et d'enrichir le patrimoine gourmand français, une miche de pain, un éclair ou un macaron à la fois.</p>
+			</div>
+			<div class="about__img--desktop">
+				<img src="{{ asset('build/images/img/artisan.png') }}" alt="Image de l'artisan"/>
+			</div>
+			<div class="about__img">
+				<img src="{{ asset('build/images/img/artisan.png') }}" alt="Image de l'artisan"/>
 			</div>
 		</div>
-        
-		<div class="experience">
-			<h2>Mon expérience</h2>
-		</div>
-		<div class="presentationImage">
-			<img src="{{ asset('build/images/img/presentation1.png') }}" alt="presentation 1">
-			<img src="{{ asset('build/images/img/presentation2.png') }}" alt="presentation 2">
-			<img src="{{ asset('build/images/img/presentation3.png') }}" alt="presentation 3">
+
+
+		<div class="section">
+			<div class="exp">
+				<div class="exp__content">
+					<h2>Mon expérience</h2>
+					<div class="exp__cards">
+						<a target="_bank" href="https://www.ebp-paris.com/" class="exp__card">
+							<img src="{{ asset('build/images/svg/logo_ecole.svg') }}" alt="Logo de l'ecole de Boulangerie et de Patisserie de Paris">
+							<p>
+								Ecole de Boulangerie et de
+								<br>
+								Patisserie.
+							</p>
+						</a>
+						<a href="/douce_saveur" class="exp__card">
+							<img src="{{ asset('build/images/img/DouceSaveur.png') }}" alt="Image de la boulangerie Douce Saveur">
+							<p>Création de ma<span>
+									boulangerie
+									<br>
+									Douce Saveur
+								</span>à Paris.</p>
+						</a>
+						<a href="/traiteur" class="exp__card">
+							<img src="{{ asset('build/images/img/traiteur.png') }}" alt="presentation 3">
+							<p>
+								<span>Mon nouveau service</span>
+								de
+								<br>
+								traiteur sucré pour
+								<span>
+									vos désirs.</span>
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
-{% endblock %}
+</div>{% endblock %}
