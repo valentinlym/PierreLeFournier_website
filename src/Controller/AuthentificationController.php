@@ -12,9 +12,9 @@ class AuthentificationController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('login');
-        // }
+        if ($this->getUser()) {
+            return $this->redirectToRoute('admin');
+        }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
