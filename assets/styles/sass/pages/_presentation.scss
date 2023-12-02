@@ -1,0 +1,61 @@
+.blocPresentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    p {
+      flex: 1;
+      margin-right: 20px;
+    }
+  
+    .artisanImage {
+      flex: 0 0 auto;
+      margin-left: 20px;
+      margin-bottom: 48px;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-width: 950px) {
+        flex-direction: column;
+    
+        p {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+    
+        .presentationImage {
+          margin-left: 0;
+        }
+      }
+}
+.experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0;
+}
+.presentationImage {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 48px;
+  
+    img {
+      max-width: 30%;
+      height: auto; 
+      margin-right: 18px;
+    }
+    @media (max-width: 650px) {
+        flex-direction: column;
+    
+        img {
+          max-width: 100%;
+          margin: 10px 0;
+        }
+      }
+  }

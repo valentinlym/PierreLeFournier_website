@@ -1,13 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Traiteur
+{% block title %}Présentation de l'artisan
 {% endblock %}
 
 {% block body %}
 	<div class="container">
-    <div class="" style="background:var(--t500);height:480px;"></div>
-    <div class="" style="height:480px;"></div>
-    <div class="" style="background:var(--t500);height:480px;"></div>
-    <div class="" style="height:480px;"></div>
-    </div>
+		<h2>Un artisan passionné avant tout !</h2>
+		<div class="blocPresentation">
+			<p>La passion pour la boulangerie chez Pierre LeFournier est une affaire qui ne date pas d'hier. Élevé dans une famille où le pétrissage de la pâte et le tour de main pour les croissants étaient des rituels quotidiens, il savait dès son jeune âge que sa vie tournerait autour des fours et des farines. Après avoir obtenu des diplômes en boulangerie et en pâtisserie, Pierre a ouvert "Douce saveur", un établissement qui marie la tradition artisanale française à une créativité sans cesse renouvelée. Ses créations sont un savant mélange d'ingrédients de qualité, d'une technique irréprochable et surtout, d'une passion qui ne s'est jamais estompée. Aujourd'hui, avec l'aide de son équipe dévouée, il continue de ravir les palais et d'enrichir le patrimoine gourmand français, une miche de pain, un éclair ou un macaron à la fois.</p>
+			<div class="artisanImage">
+				<img class="Artisan" src="{{ asset('build/images/img/artisan.png') }}" alt="image de l'artisan"/>
+			</div>
+		</div>
+        
+		<div class="experience">
+			<h2>Mon expérience</h2>
+		</div>
+		<div class="presentationImage">
+			<img src="{{ asset('build/images/img/presentation1.png') }}" alt="presentation 1">
+			<img src="{{ asset('build/images/img/presentation2.png') }}" alt="presentation 2">
+			<img src="{{ asset('build/images/img/presentation3.png') }}" alt="presentation 3">
+		</div>
+	</div>
+
 {% endblock %}

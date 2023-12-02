@@ -1,0 +1,36 @@
+.blocBoutique {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    p {
+      flex: 1;
+      margin-right: 20px;
+    }
+  
+    .boutiqueImage {
+      flex: 0 0 auto;
+      margin-left: 20px;
+      margin-bottom: 48px;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+   
+    @media (max-width: 950px) {
+      flex-direction: column;
+  
+      p {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+  
+      .boutiqueImage {
+        margin-left: 0;
+      }
+    }
+  }
+  
