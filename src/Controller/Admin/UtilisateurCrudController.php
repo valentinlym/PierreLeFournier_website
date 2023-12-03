@@ -3,13 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Utilisateur;
-use App\Entity\TypeRole;
 use EasyCorp\Bundle\EasyAdminBundle\Config\{Action, Actions, Crud, KeyValueStore};
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, EmailField, TextField, ArrayField, ChoiceField, CollectionField};
-use PhpParser\Node\Expr\Cast\Array_;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, EmailField, TextField, ArrayField};
 use Symfony\Component\Form\Extension\Core\Type\{PasswordType, RepeatedType};
 use Symfony\Component\Form\{FormBuilderInterface, FormEvents};
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -39,15 +37,15 @@ class UtilisateurCrudController extends AbstractCrudController
         $fields = [
             IdField::new('id')->hideOnForm(),
             EmailField::new('email'),
-            ArrayField::new('roles', 'Roles (ROLE_ADMIN,ROLE_USER)'),
+            ArrayField::new('roles'),
         ];
 
         $password = TextField::new('password')
             ->setFormType(RepeatedType::class)
             ->setFormTypeOptions([
                 'type' => PasswordType::class,
-                'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => '(Repeat)'],
+                'first_options' => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Mot de passe (Validation)'],
                 'mapped' => false,
             ])
             ->setRequired($pageName === Crud::PAGE_NEW)
@@ -90,10 +88,4 @@ class UtilisateurCrudController extends AbstractCrudController
             $form->getData()->setPassword($hash);
         };
     }
-}
-
-enum roles: string {
-    case Draft = 'draft';
-    case Published = 'published';
-    case Deleted = 'deleted';
 }
