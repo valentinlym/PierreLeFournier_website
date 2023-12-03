@@ -23,13 +23,6 @@
 						<input class="champ__input" id="password" type="password" name="password" placeholder="Mot de passe" required>
 					</div>
 				</div>
-				{% if app.user %}
-					<p>
-						Vous êtes connecté en tant que
-						{{ app.user.userIdentifier }}<br>
-						<a href="{{ path('app_logout') }}" class="login__left" >Se déconnecter</a>
-					</p>
-				{% endif %}
 				{% if error %}
 					<p class="login__left__alert">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
 				{% endif %}
