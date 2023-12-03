@@ -17,7 +17,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $routeBuilder = $this->container->get(AdminUrlGenerator::class);
-        $url = $routeBuilder->setController(UtilisateurCrudController::class)->generateUrl();
+        $url = $routeBuilder->setController(DevisCrudController::class)->generateUrl();
         return $this->redirect($url);
     }
 
@@ -30,6 +30,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToCrud('Devis', 'fa fa-handshake-o', Devis::class);
-        yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', Utilisateur::class);
+        if($this->isGranted('ROLE_ADMIN')) {
+            yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', Utilisateur::class);
+        }
     }
 }
