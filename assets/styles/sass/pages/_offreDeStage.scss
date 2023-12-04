@@ -35,8 +35,12 @@
 
 .card {
     border: solid 1px var(--primaire);
-    padding: 8px;
-    width: 272px;
+    padding: 16px;
+    width: 320px;
+
+    &__link:hover {
+        box-shadow: 8px 8px var(--primaire);
+    }
 
     &__title {
         font-size: 16px;
@@ -54,7 +58,8 @@
     &__tag {
         background: var(--t500);
         display: flex;
-        padding: 4px 2px 0 2px;
+        padding: 4px 8px 0 8px;
+        box-shadow: 2px 2px var(--primaire);
 
         p {
             line-height: auto;
@@ -65,12 +70,9 @@
         margin-top: 8px;
     }
 
-    &__btn {
-        padding-left: 0;
-
-        &:hover {
-            padding-left: 0;
-        }
+    &__cta {
+        margin: 16px 0;
+        text-decoration: underline;
     }
 }
 
@@ -78,7 +80,7 @@
     display: flex;
     justify-content: center;
     width: auto;
-    padding: 32px 16px;
+    padding: 80px 16px;
 
     &__content {
         display: flex;

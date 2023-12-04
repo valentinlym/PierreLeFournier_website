@@ -1,0 +1,37 @@
+.candidature {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 16px 56px 16px;
+    height: fit-content;
+    gap: 24px;
+    align-items: center;
+
+    &__left {}
+
+    &__right {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .candidature {
+        padding: 48px 6.25vw;
+        display: flex;
+        gap: 6.25vw;
+        flex-direction: row;
+        align-items: normal;
+
+
+        &__text {
+            padding: 0;
+        }
+
+        &__img {
+            display: none;
+
+            &--desktop {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="candidature">
+			<div class="candidature__left">
+				<h2>Candidature -
+					{{ offre_de_stage.titre }}
+				</h2>
+				<p>formulaire de quandidature</p>
+			</div>
+			<div class="candidature__right">
+				<div class="card">
+					<p class="card__title">
+						{{ offre_de_stage.titre }}
+					</p>
+					<div class="card__tags">
+						<div class="card__tag">
+							<p>{{ offre_de_stage.salaire }}
+								€</p>
+						</div>
+						<div class="card__tag">
+							<p>{{ offre_de_stage.duree }}</p>
+						</div>
+						<div class="card__description">
+							<p>{{ offre_de_stage.description }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{# <table class="table">
+										<tbody>
+											<tr>
+												<th>Id</th>
+												<td>{{ offre_de_stage.id }}</td>
+											</tr>
+											<tr>
+												<th>Titre</th>
+												<td>{{ offre_de_stage.titre }}</td>
+											</tr>
+											<tr>
+												<th>Salaire</th>
+												<td>{{ offre_de_stage.salaire }}</td>
+											</tr>
+											<tr>
+												<th>Duree</th>
+												<td>{{ offre_de_stage.duree }}</td>
+											</tr>
+											<tr>
+												<th>Description</th>
+												<td>{{ offre_de_stage.description }}</td>
+											</tr>
+											<tr>
+												<th>Brouillon</th>
+												<td>{{ offre_de_stage.brouillon ? 'Yes' : 'No' }}</td>
+											</tr>
+										</tbody>
+									</table>
+						
+									<a href="{{ path('app_offre_de_stage_index') }}">back to list</a> #}
+		</div>
+	</div>
+
+{% endblock %}

@@ -21,6 +21,18 @@ class OffreDeStageRepository extends ServiceEntityRepository
         parent::__construct($registry, OffreDeStage::class);
     }
 
+   /**
+    * @return OffreDeStage[] Returns an array of OffreDeStage objects
+    */
+   public function findNoBrouillon(): array
+   {
+       return $this->createQueryBuilder('o')
+           ->andWhere('o.brouillon = :val')
+           ->setParameter('val', 0)
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 //    /**
 //     * @return OffreDeStage[] Returns an array of OffreDeStage objects
 //     */

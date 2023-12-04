@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OffreDeStage index
+{% block title %}Offre de stage
 {% endblock %}
 
 {% block body %}
@@ -22,24 +22,26 @@
 				<h2>Nos offres de stage</h2>
 				<div class="offres__cards">
 					{% for offre_de_stage in offre_de_stages %}
-						<div class="card">
-							<p class="card__title">
-								{{ offre_de_stage.titre }}
-							</p>
-							<div class="card__tags">
-								<div class="card__tag">
-									<p>{{ offre_de_stage.salaire }}
-										€</p>
+						<a class="card__link" href="{{ path('app_offre_de_stage_show', {'id': offre_de_stage.id}) }}">
+							<div class="card">
+								<p class="card__title">
+									{{ offre_de_stage.titre }}
+								</p>
+								<div class="card__tags">
+									<div class="card__tag">
+										<p>{{ offre_de_stage.salaire }}
+											€</p>
+									</div>
+									<div class="card__tag">
+										<p>{{ offre_de_stage.duree }}</p>
+									</div>
+									<div class="card__description">
+										<p>{{ offre_de_stage.description }}</p>
+									</div>
 								</div>
-								<div class="card__tag">
-									<p>{{ offre_de_stage.duree }}</p>
-								</div>
-								<div class="card__description">
-									<p>{{ offre_de_stage.description }}</p>
-								</div>
+								<p class="card__cta">Candidater -></p>
 							</div>
-							<button class="btn btn__secondaire card__btn">Candidater</button>
-						</div>
+						</a>
 					{% endfor %}
 				</div>
 			</div>
