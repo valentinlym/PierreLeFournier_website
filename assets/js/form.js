@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("FONC");
-    const formulaire = document.getElementById('sumitForm');
-    console.log(formulaire);
+    const formulaire = document.getElementById("sumitForm");
     if (formulaire != null) {
         const champsObligatoires = Array.from(
             formulaire.querySelectorAll("[required]")
         );
         const btnSoumettre = document.getElementById("btnSoumettre");
-
         formulaire.addEventListener("input", function () {
             // Vérifie si tous les champs obligatoires sont remplis
             const champsValides = champsObligatoires.every(

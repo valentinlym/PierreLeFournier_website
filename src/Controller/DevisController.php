@@ -25,7 +25,7 @@ class DevisController extends AbstractController
             $entityManager->persist($devi);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_devis_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_traiteur', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('traiteur/new.html.twig', [

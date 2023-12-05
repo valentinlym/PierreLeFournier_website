@@ -2,7 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Candidature;
 use App\Entity\Devis;
+use App\Entity\OffreDeStage;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -30,6 +32,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToCrud('Devis', 'fa fa-handshake-o', Devis::class);
+        yield MenuItem::linkToCrud('Offre de stage', 'fa fa-tag', OffreDeStage::class);
+        yield MenuItem::linkToCrud('Candidature', 'fa fa-envelope', Candidature::class);
         if($this->isGranted('ROLE_ADMIN')) {
             yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', Utilisateur::class);
         }

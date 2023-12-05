@@ -1,4 +1,4 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'id': 'sumitForm'}}) }} 
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button disabled id="btnSoumettre" class="btn">{{ button_label|default('Candidater') }}</button>
 {{ form_end(form) }}

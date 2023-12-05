@@ -23,7 +23,7 @@ class OffreDeStageController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_offre_de_stage_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_offre_de_stage_show', methods: ['GET', 'POST'])]
     public function show(Request $request, EntityManagerInterface $entityManager,OffreDeStage $offreDeStage): Response
     {
         $candidature = new Candidature();
@@ -35,7 +35,7 @@ class OffreDeStageController extends AbstractController
             $entityManager->persist($candidature);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_candidature_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_offre_de_stage_show', array('id' => $offreDeStage->getId()), Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('dynamic/offre_de_stage--show.html.twig', [
