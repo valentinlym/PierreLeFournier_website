@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\OffreDeStage;
-use App\Form\OffreDeStageType;
+use App\Entity\Candidature;
+use App\Form\CandidatureType;
 use App\Repository\OffreDeStageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,9 +24,23 @@ class OffreDeStageController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_offre_de_stage_show', methods: ['GET'])]
-    public function show(OffreDeStage $offreDeStage): Response
+    public function show(Request $request, EntityManagerInterface $entityManager,OffreDeStage $offreDeStage): Response
     {
-        return $this->render('dynamic/offre_de_stage--show.html.twig', [
+        $candidature = new Candidature();
+        $candidature->setIdOffreDeStage($offreDeStage);
+        $form = $this->createForm(CandidatureType::class, $candidature);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($candidature);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_candidature_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('dynamic/offre_de_stage--show.html.twig', [
+            'candidature' => $candidature,
+            'form' => $form,
             'offre_de_stage' => $offreDeStage,
         ]);
     }
