@@ -9,7 +9,7 @@
 				<h2>Candidature -
 					{{ offre_de_stage.titre }}
 				</h2>
-				<p>formulaire de quandidature</p>
+				{{ include('dynamic/_formCandidature.html.twig') }}
 			</div>
 			<div class="candidature__right">
 				<div class="card">
@@ -31,36 +31,6 @@
 				</div>
 			</div>
 
-			{# <table class="table">
-										<tbody>
-											<tr>
-												<th>Id</th>
-												<td>{{ offre_de_stage.id }}</td>
-											</tr>
-											<tr>
-												<th>Titre</th>
-												<td>{{ offre_de_stage.titre }}</td>
-											</tr>
-											<tr>
-												<th>Salaire</th>
-												<td>{{ offre_de_stage.salaire }}</td>
-											</tr>
-											<tr>
-												<th>Duree</th>
-												<td>{{ offre_de_stage.duree }}</td>
-											</tr>
-											<tr>
-												<th>Description</th>
-												<td>{{ offre_de_stage.description }}</td>
-											</tr>
-											<tr>
-												<th>Brouillon</th>
-												<td>{{ offre_de_stage.brouillon ? 'Yes' : 'No' }}</td>
-											</tr>
-										</tbody>
-									</table>
-						
-									<a href="{{ path('app_offre_de_stage_index') }}">back to list</a> #}
 		</div>
 	</div>
 
