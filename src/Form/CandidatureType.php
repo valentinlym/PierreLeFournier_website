@@ -13,10 +13,18 @@ class CandidatureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('email', EmailType::class)
-        ;
+            ->add('nom', TextType::class, [
+                'label' => 'Votre nom',
+                'attr' => ['placeholder' => 'Dupont'],
+            ])
+            ->add('prenom', TextType::class, [
+                'label' => 'Votre prénom',
+                'attr' => ['placeholder' => 'Jean'],
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Votre email',
+                'attr' => ['placeholder' => 'exemple@exemple.com'],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

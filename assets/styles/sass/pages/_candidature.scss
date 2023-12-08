@@ -6,10 +6,27 @@
     gap: 24px;
     align-items: center;
 
-    &__left {}
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        button {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    .champ {
+        max-width: 400px;
+    }
 
     &__right {
         margin-top: 80px;
+
+        .card {
+            box-shadow: 8px 8px var(--primaire);
+        }
     }
 }
 

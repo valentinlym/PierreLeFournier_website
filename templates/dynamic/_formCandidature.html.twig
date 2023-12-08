@@ -1,4 +1,11 @@
-{{ form_start(form, {'attr': {'id': 'sumitForm'}}) }} 
-    {{ form_row(form, {'attr': {'class': 'champ'}}) }}
+{{ form_start(form, {'attr': {'id': 'sumitForm', 'class': 'candidature__left'}}) }} 
+    {% for child in form.children %}
+	{% if child.vars.name != '_token' %}
+		<div class="champ">
+			{{ form_label(child) }}
+			{{ form_widget(child, {'attr': {'class': 'champ__input'}}) }}
+		</div>
+	{% endif %}
+{% endfor %}
     <button disabled id="btnSoumettre" class="btn">{{ button_label|default('Candidater') }}</button>
 {{ form_end(form) }}
