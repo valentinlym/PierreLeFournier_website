@@ -7,6 +7,9 @@
     align-items: center;
 
     &__left {
+        h2 {
+            width: 567px;
+        }
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -14,6 +17,15 @@
         button {
             width: 100%;
             max-width: 400px;
+
+            &:hover {
+                text-decoration: underline;
+                padding: 14px 24px;
+            }
+
+            &::after {
+                display: none;
+            }
         }
     }
 

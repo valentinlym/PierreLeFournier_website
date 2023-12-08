@@ -15,5 +15,14 @@
 
     button.btn {
         width: 100%;
+
+        &:hover {
+            text-decoration: underline;
+            padding: 14px 24px;
+        }
+
+        &::after {
+            display: none;
+        }
     }
 }
