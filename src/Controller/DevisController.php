@@ -28,7 +28,7 @@ class DevisController extends AbstractController
             return $this->redirectToRoute('app_traiteur', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('traiteur/new.html.twig', [
+        return $this->renderForm('dynamic/traiteur.html.twig', [
             'devi' => $devi,
             'form' => $form,
         ]);

@@ -7,12 +7,12 @@
     }
 
     &__input {
-        padding: 0 8px;
+        padding: 8px;
         background: var(--secondaire);
         color: var(--primaire);
         border: 1px solid var(--primaire);
         height: fit-content;
-        line-height: 46px;
+        min-height: 48px;
         font-family: "Visuelt Pro";
         font-size: 14px;
 
