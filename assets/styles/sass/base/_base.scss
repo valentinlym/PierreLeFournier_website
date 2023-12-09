@@ -12,7 +12,7 @@
 }
 
 html {
-    background: var(--secondaire);
+    background: var(--primaire);
 }
 
 *,
@@ -119,6 +119,7 @@ label {
 
 .container {
     padding-top: 80px;
+    background: var(--secondaire);
 }
 
 .section {

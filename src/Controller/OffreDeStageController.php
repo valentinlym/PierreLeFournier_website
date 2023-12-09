@@ -26,6 +26,9 @@ class OffreDeStageController extends AbstractController
     #[Route('/{id}', name: 'app_offre_de_stage_show', methods: ['GET', 'POST'])]
     public function show(Request $request, EntityManagerInterface $entityManager,OffreDeStage $offreDeStage): Response
     {
+        if ($offreDeStage->isBrouillon()) {
+            return $this->redirectToRoute('app_offre_de_stage_index');
+        }
         $candidature = new Candidature();
         $candidature->setIdOffreDeStage($offreDeStage);
         $form = $this->createForm(CandidatureType::class, $candidature);
@@ -34,7 +37,6 @@ class OffreDeStageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($candidature);
             $entityManager->flush();
-
             return $this->redirectToRoute('app_offre_de_stage_show', array('id' => $offreDeStage->getId()), Response::HTTP_SEE_OTHER);
         }
 

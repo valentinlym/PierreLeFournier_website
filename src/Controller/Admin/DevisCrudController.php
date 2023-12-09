@@ -17,6 +17,8 @@ class DevisCrudController extends AbstractCrudController
     {
         return [
             EmailField::new('email'),
+            EmailField::new('nom'),
+            EmailField::new('prenom'),
             TextField::new('objet'),
             TextEditorField::new('description'),
         ];

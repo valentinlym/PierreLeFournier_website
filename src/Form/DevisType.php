@@ -19,11 +19,11 @@ class DevisType extends AbstractType
             ])
             ->add('nom', TextType::class, [
                 'label' => 'Votre Nom',
-                'attr' => ['placeholder' => 'Jean'],
+                'attr' => ['placeholder' => 'Dupont'],
             ])
             ->add('prenom', TextType::class,  [
                 'label' => 'Votre prénom',
-                'attr' => ['placeholder' => 'Dupont'],
+                'attr' => ['placeholder' => 'Jean'],
             ])
             ->add('objet', TextType::class, [
                 'label' => 'L\'objet de votre demande',
