@@ -4,10 +4,67 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-    <div class="" style="background:var(--t500);height:480px;"></div>
-    <div class="" style="height:480px;"></div>
-    <div class="" style="background:var(--t500);height:480px;"></div>
-    <div class="" style="height:480px;"></div>
-    </div>
+	<div class="container show">
+		<div class="show__presentation">
+			<div class="show__presentation__text">
+				<h2>Un artisan passionné avant tout !</h2>
+				<p>
+					Pierre LeFournier n'est pas seulement un nom sur une enseigne, c'est un grand un artisan dédié à l'art de la boulangerie et de la pâtisserie. Animé par une passion héritée des traditions françaises, il a amélioré son savoir faire depuis son plus jeune age. Venez découvrir ses merveilleuses recettes.
+				</p>
+				<a href="/presentation" class="btn btn__primaire">En savoir plus</a>
+			</div>
+			<div class="show__img">
+				<img src="{{ asset('build/images/img/artisan.png') }}" alt="Image de l'artisan"/>
+			</div>
+		</div>
+		<div class="show__douce_saveur">
+			<div class="show__douce_saveur__text">
+				<h2>Douce Saveur, mon rêve...</h2>
+				<p>
+					"Douce Saveur" n'est pas une simple boulangerie-pâtisserie c'est un sanctuaire du goût et de l'artisanat. Située dans un cadre charmant qui fusionne tradition et modernité, cette boutique est devenue un repère pour les amateurs de délices français authentiques.
+				</p>
+				<a href="/douce_saveur" class="btn btn__primaire">En savoir plus</a>
+			</div>
+			<div class="show__img">
+				<img src="{{ asset('build/images/img/DouceSaveur.png') }}" alt="Image de la boulangerie 'Douce Saveur'"/>
+			</div>
+		</div>
+		<div class="show__traiteur">
+			<div class="show__presentation__text">
+				<h2>Traiteur à votre service</h2>
+				<p>
+					Pierre LeFournier n'est pas seulement le maître des pains et des pâtisseries, il est aussi votre chef traiteur d'exception. Mettant son expertise au service de vos événements, il saura transformer chaque occasion en un festin mémorable.
+				</p>
+				<a href="/traiteur" class="btn btn__primaire">En savoir plus</a>
+			</div>
+			<div class="show__img" id="actu">
+				<img src="{{ asset('build/images/img/traiteur.png') }}" alt="Image d'un buffet"/>
+			</div>
+		</div>
+		<div class="show__instagram">
+			<div class="insta__header">
+				<img src="{{ asset('build/images/img/pp_insta.jpg') }}" width="56" height="56" alt="Photo de profil de Pierre LeFournier">
+				<p>Pierre_LeFournier</p>
+				<svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_504_825)">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.999 1.547L7.319 0L5.833 2.575H2.716V5.752L0 7.32L1.547 10L0 12.6795L2.716 14.248V17.2005H5.7035L7.319 20L9.999 18.453L12.679 20L14.295 17.2H17.376V14.195L20 12.6795L18.4525 10L20 7.3205L17.376 5.8055V2.5755H14.1665L12.679 0L9.999 1.547ZM13.7065 7.1595L14.8335 8.303L9.1185 14.053L5.701 10.588L6.823 9.459L9.1165 11.7495L13.7065 7.1595Z" fill="#0095F6"/>
+					</g>
+					<defs>
+						<clipPath id="clip0_504_825">
+							<rect width="20" height="20" fill="white"/>
+						</clipPath>
+					</defs>
+				</svg>
+			</div>
+			<div class="insta__img carousel-container">
+				<div class="carousel">
+					<img src="{{ asset('build/images/img/insta_1.jpg') }}" alt="">
+					<img src="{{ asset('build/images/img/insta_2.jpg') }}" alt="">
+					<img src="{{ asset('build/images/img/insta_3.jpg') }}" alt="">
+				</div>
+			</div>
+			<a target="_blank" class="insta__btn btn btn__secondaire" href="https://www.instagram.com/">Suivez-moi sur Instragram
+			</a>
+		</div>
+	</div>
 {% endblock %}
