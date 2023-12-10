@@ -26,6 +26,29 @@ class CandidatureType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
                 'attr' => ['placeholder' => 'exemple@exemple.com'],
+            ])
+            ->add('cv', FileType::class, [
+                'label' => 'Déposer votre CV (format PDF)',
+
+                // unmapped means that this field is not associated to any entity property
+                'mapped' => false,
+
+                // make it optional so you don't have to re-upload the PDF file
+                // every time you edit the Product details
+                'required' => true,
+
+                // unmapped fields can't define their validation using attributes
+                // in the associated entity, so you can use the PHP constraint classes
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'application/pdf',
+                            'application/x-pdf',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                    ])
+                ],
             ]);
     }
 
