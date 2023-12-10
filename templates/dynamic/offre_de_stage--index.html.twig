@@ -21,27 +21,31 @@
 			<div class="offres__content">
 				<h2>Nos offres de stage</h2>
 				<div class="offres__cards">
-					{% for offre_de_stage in offre_de_stages %}
-						<div class="card">
-							<a class="card__link" href="{{ path('app_offre_de_stage_show', {'id': offre_de_stage.id}) }}">
-								<p class="card__title">
-									{{ offre_de_stage.titre }}
-								</p>
-								<div class="card__tags">
-									<div class="card__tag">
-										<p>{{ offre_de_stage.salaire }}</p>
-									</div>
-									<div class="card__tag">
-										<p>{{ offre_de_stage.duree }}</p>
-									</div>
-									<div class="card__description">
-										<p>{{ offre_de_stage.description }}</p>
-									</div>
+					{% if offre_de_stages == null %}
+						<p>Nous sommes désolés, mais pour le moment, nous n'avons pas d'offre de stage à vous proposer.</p>
+						{% else %}
+							{% for offre_de_stage in offre_de_stages %}
+								<div class="card">
+									<a class="card__link" href="{{ path('app_offre_de_stage_show', {'id': offre_de_stage.id}) }}">
+										<p class="card__title">
+											{{ offre_de_stage.titre }}
+										</p>
+										<div class="card__tags">
+											<div class="card__tag">
+												<p>{{ offre_de_stage.salaire }}</p>
+											</div>
+											<div class="card__tag">
+												<p>{{ offre_de_stage.duree }}</p>
+											</div>
+											<div class="card__description">
+												<p>{{ offre_de_stage.description }}</p>
+											</div>
+										</div>
+										<p class="card__cta">Candidater -></p>
+									</a>
 								</div>
-								<p class="card__cta">Candidater -></p>
-							</a>
-						</div>
-					{% endfor %}
+							{% endfor %}
+					{% endif %}
 				</div>
 			</div>
 		</div>
