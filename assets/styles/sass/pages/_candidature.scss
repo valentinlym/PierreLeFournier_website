@@ -4,7 +4,6 @@
     padding: 48px 16px 56px 16px;
     height: fit-content;
     gap: 24px;
-    align-items: center;
     width: 100%;
 
 
@@ -12,12 +11,13 @@
         h2 {
             width: 567px;
         }
+
         display: flex;
         flex-direction: column;
         gap: 16px;
 
         button {
-           max-width: 80vw;
+            max-width: 80vw;
 
             &:hover {
                 text-decoration: underline;
@@ -49,8 +49,13 @@
         display: flex;
         gap: 6.25vw;
         flex-direction: row;
+        align-items: center;
 
         &__left {
+            h2 {
+                width: 567px;
+            }
+
             & button {
                 max-width: 400px;
             }
@@ -71,6 +76,7 @@
                 }
             }
         }
+
         &__right {
             margin-bottom: 0;
         }
